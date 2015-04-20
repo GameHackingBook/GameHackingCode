@@ -26,3 +26,19 @@
 *.exe
 *.out
 *.app
+
+
+# VS stuff
+*.suo
+*.sdf
+*.user
+
+#other directories
+*/ipch/*
+*/Debug/*
+*/Release/*
+*/BuildTemp/*
+ipch/*
+Debug/*
+Release/*
+BuildTemp/*
