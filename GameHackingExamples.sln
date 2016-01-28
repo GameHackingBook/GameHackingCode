@@ -21,6 +21,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter8_Direct3DHook", "Ch
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter10_ResponsiveHacks", "Chapter10_ResponsiveHacks\Chapter10_ResponsiveHacks.vcxproj", "{E28E3DC6-2614-43B9-83E4-86D6F9A585B1}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter11_StateMachines", "Chapter11_StateMachines\Chapter11_StateMachines.vcxproj", "{F28D01D3-BDE9-4992-B3A9-9803D7294F05}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter11_SearchAlgorithms", "Chapter11_SearchAlgorithms\Chapter11_SearchAlgorithms.vcxproj", "{35470A34-CBB0-41D1-A54B-E1CF3DE9A3B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -67,6 +71,14 @@ Global
 		{E28E3DC6-2614-43B9-83E4-86D6F9A585B1}.Debug|Win32.Build.0 = Debug|Win32
 		{E28E3DC6-2614-43B9-83E4-86D6F9A585B1}.Release|Win32.ActiveCfg = Release|Win32
 		{E28E3DC6-2614-43B9-83E4-86D6F9A585B1}.Release|Win32.Build.0 = Release|Win32
+		{F28D01D3-BDE9-4992-B3A9-9803D7294F05}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F28D01D3-BDE9-4992-B3A9-9803D7294F05}.Debug|Win32.Build.0 = Debug|Win32
+		{F28D01D3-BDE9-4992-B3A9-9803D7294F05}.Release|Win32.ActiveCfg = Release|Win32
+		{F28D01D3-BDE9-4992-B3A9-9803D7294F05}.Release|Win32.Build.0 = Release|Win32
+		{35470A34-CBB0-41D1-A54B-E1CF3DE9A3B7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{35470A34-CBB0-41D1-A54B-E1CF3DE9A3B7}.Debug|Win32.Build.0 = Debug|Win32
+		{35470A34-CBB0-41D1-A54B-E1CF3DE9A3B7}.Release|Win32.ActiveCfg = Release|Win32
+		{35470A34-CBB0-41D1-A54B-E1CF3DE9A3B7}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

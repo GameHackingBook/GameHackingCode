@@ -70,7 +70,7 @@ DWORD GetProcessThreadID(HANDLE Process)
 
 
 
-void injectCodeUsingThreadRedirection(HANDLE process, LPVOID func, int times, const char* string)
+void injectCodeUsingThreadHijacking(HANDLE process, LPVOID func, int times, const char* string)
 {
 	BYTE codeCave[31] = {
 		0x60, //PUSHAD
@@ -113,7 +113,7 @@ void injectCodeUsingThreadRedirection(HANDLE process, LPVOID func, int times, co
 	WriteProcessMemory(process, remoteCave, codeCave, sizeof(codeCave), NULL);
 
 
-	//redirect the thread
+	//hijack the thread
 	threadContext.Eip = (DWORD)remoteCave;
 	threadContext.ContextFlags = CONTEXT_CONTROL;
 	SetThreadContext(thread, &threadContext);
@@ -123,9 +123,9 @@ void injectCodeUsingThreadRedirection(HANDLE process, LPVOID func, int times, co
 	CloseHandle(thread);
 }
 
-DWORD WINAPI redirectionThread(LPVOID lpParam)
+DWORD WINAPI hijackThread(LPVOID lpParam)
 {
-	injectCodeUsingThreadRedirection((HANDLE)lpParam, &printStringManyTimes, 2, "redirected\n");
+	injectCodeUsingThreadHijacking((HANDLE)lpParam, &printStringManyTimes, 2, "hijacked\n");
 	return 1;
 }
 
@@ -157,11 +157,11 @@ int main(void)
 	// inject code into self using thread injection
 	injectCodeUsingThreadInjection(proc, &printStringManyTimes, 2, "injected\n");
 
-	// inject code into self using thread re-direction
+	// inject code into self using thread hijacking
 	//   we need to do it from a secondary thread or else
-	//   the redirection code would redirect itself.. which
+	//   the hijacking code would hijack itself.. which
 	//   doesn't work
-	CreateThread(NULL, 0, redirectionThread, proc, 0, NULL); 
+	CreateThread(NULL, 0, hijackThread, proc, 0, NULL); 
 
 	LoadDll(proc, L"Chapter7_CodeInjection_DLL.dll");
 

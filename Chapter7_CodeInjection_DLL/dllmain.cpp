@@ -1,10 +1,9 @@
 #include <windows.h>
 
 
-DWORD WINAPI nonTrivialSomething(LPVOID lpParam)
-{
-
-	return 1;
+DWORD WINAPI runBot(LPVOID lpParam) {
+    // run your bot
+    return 1;
 }
 
 
@@ -17,12 +16,8 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 	{
 	case DLL_PROCESS_ATTACH:
 		MessageBoxA(NULL, "DLL Attached!\n", "Game Hacking", MB_OK | MB_TOPMOST);
-		CreateThread(NULL, 0, &nonTrivialSomething, NULL, 0, NULL); 
-		break;
-	case DLL_PROCESS_DETACH:
-		MessageBoxA(NULL, "DLL Detached!\n", "Game Hacking", MB_OK | MB_TOPMOST);
+		CreateThread(NULL, 0, &runBot, NULL, 0, NULL); 
 		break;
 	}
 	return TRUE;
 }
-

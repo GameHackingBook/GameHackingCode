@@ -10,6 +10,9 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{37305F21-BB4B-4492-A713-DDD94653C16E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

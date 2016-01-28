@@ -3,21 +3,17 @@
 #include <tlhelp32.h>
 
 
-void printMyPid()
+DWORD getPIDFromWindow(HWND window)
 {
-	wchar_t myTitle[1024];
-	GetConsoleTitle(&myTitle[0], 1024);
-
-	HWND myWindow = FindWindow(NULL, myTitle);
-
-	DWORD pid;
-	GetWindowThreadProcessId(myWindow, &pid);
-
-	printf("My pid is %d\n", pid);
+	DWORD PID;
+	GetWindowThreadProcessId(window, &PID);
+	return PID;
 }
 
-void printExplorerPid()
+DWORD getPIDByName(std::wstring name)
 {
+	DWORD PID = -1;
+
 	PROCESSENTRY32 entry;
 	entry.dwSize = sizeof(PROCESSENTRY32);
 
@@ -28,15 +24,16 @@ void printExplorerPid()
 		while (Process32Next(snapshot, &entry) == TRUE)
 		{
 			std::wstring binaryPath = entry.szExeFile;
-			if (binaryPath.find(L"explorer.exe") != std::wstring::npos)
+			if (binaryPath.find(name) != std::wstring::npos)
 			{
-				printf("Explorer's pid is %d\n", entry.th32ProcessID);
+				PID = entry.th32ProcessID;
 				break;
 			}
 		}
 	}
 
 	CloseHandle(snapshot);
+	return PID;
 }
 
 template<typename T>
@@ -154,11 +151,27 @@ void printMyBaseAddresses(HANDLE Process)
 
 int main(void)
 {
-	HANDLE proc = OpenProcess(PROCESS_ALL_ACCESS, FALSE, GetCurrentProcessId());
+	HANDLE proc = OpenProcess(
+		PROCESS_VM_OPERATION |
+        PROCESS_VM_READ |
+        PROCESS_VM_WRITE  |
+		PROCESS_CREATE_THREAD,
+		FALSE, GetCurrentProcessId());
 
 	printMyBaseAddresses(proc);
-	printMyPid();
-	printExplorerPid();
+
+	// get my PID from window
+	wchar_t myTitle[1024];
+	GetConsoleTitle(&myTitle[0], 1024);
+	HWND myWindow = FindWindow(NULL, myTitle);
+	
+	auto myPID = getPIDFromWindow(myWindow);
+	printf("My pid is %d\n", myPID);
+
+	// get explorer PID by process name
+	auto explorerPID = getPIDByName(L"explorer.exe");
+	printf("Explorer pid is %d\n", explorerPID);
+
 
 	// lets do some memory stuff.. to ourself
 	DWORD someValue = 1234;
