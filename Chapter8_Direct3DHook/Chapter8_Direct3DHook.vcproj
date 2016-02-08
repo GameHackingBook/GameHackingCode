@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="LoLOracle Hook"
+	Name="Direct3D Hook"
 	ProjectGUID="{784C482A-F6EC-4BCB-851E-07BE782BB040}"
-	RootNamespace="LoLOracleHook"
+	RootNamespace="Direct3DHook"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -41,8 +41,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;C:\Program Files (x86)\Microsoft Research\ms detours 1.5 src\src&quot;;&quot;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include&quot;"
-				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;LOLORACLEHOOK_EXPORTS"
+				AdditionalIncludeDirectories="&quot;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include&quot;"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -62,10 +62,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="detours.lib"
-				OutputFile="$(OutDir)\loloracle.dll"
+				AdditionalDependencies=""
+				OutputFile="$(OutDir)\Chapter8_Direct3DHook.dll"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="&quot;C:\Program Files (x86)\Microsoft Research\ms detours 1.5 src\lib&quot;"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				DataExecutionPrevention="0"
@@ -120,8 +120,8 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				AdditionalIncludeDirectories="&quot;C:\Program Files (x86)\Microsoft Research\ms detours 1.5 src\src&quot;;&quot;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include&quot;"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;LOLORACLEHOOK_EXPORTS"
+				AdditionalIncludeDirectories=";&quot;C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include&quot;"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
@@ -139,10 +139,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="detours.lib"
-				OutputFile="$(OutDir)\loloracle.dll"
+				AdditionalDependencies=""
+				OutputFile="$(OutDir)\Chapter8_Direct3DHook.dll"
 				LinkIncremental="1"
-				AdditionalLibraryDirectories="&quot;C:\Program Files (x86)\Microsoft Research\ms detours 1.5 src\lib&quot;"
+				AdditionalLibraryDirectories=""
 				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"

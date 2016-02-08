@@ -83,7 +83,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CallHookExample.cpp" />
+    <ClCompile Include="IATHookExample.cpp" />
     <ClCompile Include="main-controlFlow.cpp" />
+    <ClCompile Include="NOPExample.cpp" />
+    <ClCompile Include="VFHookExample.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

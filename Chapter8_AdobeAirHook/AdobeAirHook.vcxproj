@@ -82,7 +82,6 @@
     <ClInclude Include="ThreadLock.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Chapter7_CodeInjection_DLL\dllmain.cpp" />
     <ClCompile Include="AdobeAirHook.cpp" />
     <ClCompile Include="DebugConsole.cpp" />
     <ClCompile Include="dllmain.cpp">
