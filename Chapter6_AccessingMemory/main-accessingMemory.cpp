@@ -123,7 +123,7 @@ DWORD getMyBaseAddressFS()
 	return newBase;
 }
 
-DWORD getMyBaseRemoteGMH(HANDLE Process)
+DWORD getRemoteBaseAddress(HANDLE Process)
 {
 	LPVOID TIB;
 	__asm
@@ -142,7 +142,7 @@ void printMyBaseAddresses(HANDLE Process)
 {
 	DWORD base1 = getMyBaseAddressGMH();
 	DWORD base2 = getMyBaseAddressFS();
-	DWORD base3 = getMyBaseRemoteGMH(Process);
+	DWORD base3 = getRemoteBaseAddress(Process);
 	if (base1 != base2 || base2 != base3)
 		printf("Woah, this should be impossible!\n");
 	else
