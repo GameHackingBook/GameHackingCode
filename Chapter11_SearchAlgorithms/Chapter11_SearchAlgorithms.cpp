@@ -35,7 +35,8 @@ public:
     }
     void updateScore(int endx, int endy)
     {
-		this->score = g + heuristic(endx, endy) * TILE_COST;
+		auto h = this->heuristic(endx, endy) * TILE_COST;
+		this->score = g + h;
     }
 	AStarNodePtr getCopy()
 	{

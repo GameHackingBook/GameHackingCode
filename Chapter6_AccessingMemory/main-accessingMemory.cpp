@@ -123,19 +123,31 @@ DWORD getMyBaseAddressFS()
 	return newBase;
 }
 
-DWORD getRemoteBaseAddress(HANDLE Process)
+DWORD getRemoteBaseAddress(HANDLE process)
 {
-	LPVOID TIB;
-	__asm
-	{
-		MOV EAX, DWORD PTR FS:[0x18]
-		ADD EAX, 0x30
-		MOV TIB, EAX
-	}
-	// read 0x30 bytes past _the_game's_ TIB to get the PEB
-	DWORD PEB = readMemoryAPI<DWORD>(Process, TIB);
-	// read 0x8 bytes past _the_game's_ PEB to get the base
-	return readMemoryAPI<DWORD>(Process, (LPVOID)(PEB + 0x08));
+
+	DWORD newBase;
+	// get the address of kernel32.dll
+	HMODULE k32 = GetModuleHandleA("kernel32.dll");
+
+	// get the address of GetModuleHandle()
+	LPVOID funcAdr = GetProcAddress(k32, "GetModuleHandleA");
+
+	if (!funcAdr)
+		funcAdr = GetProcAddress(k32, "GetModuleHandleW");
+	// create the thread
+	HANDLE thread = CreateRemoteThread(process, NULL, NULL, (LPTHREAD_START_ROUTINE)funcAdr, NULL, NULL, NULL);
+
+	// let the thread finish
+	WaitForSingleObject(thread, INFINITE);
+
+	// get the exit code
+	GetExitCodeThread(thread, &newBase);
+
+	// clean up the thread handle
+	CloseHandle(thread);
+
+	return newBase;
 }
 
 void printMyBaseAddresses(HANDLE Process)

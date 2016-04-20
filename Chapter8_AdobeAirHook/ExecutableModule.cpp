@@ -17,7 +17,7 @@ ExecutableModule::~ExecutableModule(void)
 DWORD ExecutableModule::findPattern(const char* pattern, unsigned int patternLength, unsigned int occurance)
 {
 	unsigned int ocur = 0;
-	for (DWORD adr = this->base; adr < this->base + this->size - patternLength; adr++)
+	for (DWORD adr = this->base; adr <= this->base + this->size - patternLength; adr++)
 	{
 
 		if (memcmp((LPVOID)pattern, (LPVOID)adr, patternLength) == 0)

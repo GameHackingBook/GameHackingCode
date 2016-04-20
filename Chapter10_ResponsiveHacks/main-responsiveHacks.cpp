@@ -97,6 +97,8 @@ DWORD WINAPI exampleThread(LPVOID lpParam)
 	auto window = FindWindowA(NULL, "Chapter10 Input Example");
 	typeStringWithSendMessage(window, "Typing using SendMessage()!\rEffectively the same, but more powerful :-)\r\r");
 
+	std::cout << std::endl << std::endl << "DONE! you can close this now!" << std::endl;
+
 	return 0;
 }
 
