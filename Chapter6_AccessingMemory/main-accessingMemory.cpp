@@ -125,7 +125,6 @@ DWORD getMyBaseAddressFS()
 
 DWORD getRemoteBaseAddress(HANDLE process)
 {
-
 	DWORD newBase;
 	// get the address of kernel32.dll
 	HMODULE k32 = GetModuleHandleA("kernel32.dll");
