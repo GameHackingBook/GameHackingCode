@@ -132,9 +132,8 @@ DWORD getRemoteBaseAddress(HANDLE process)
 
 	// get the address of GetModuleHandle()
 	LPVOID funcAdr = GetProcAddress(k32, "GetModuleHandleA");
+	if (!funcAdr) funcAdr = GetProcAddress(k32, "GetModuleHandleW");
 
-	if (!funcAdr)
-		funcAdr = GetProcAddress(k32, "GetModuleHandleW");
 	// create the thread
 	HANDLE thread = CreateRemoteThread(process, NULL, NULL, (LPTHREAD_START_ROUTINE)funcAdr, NULL, NULL, NULL);
 
