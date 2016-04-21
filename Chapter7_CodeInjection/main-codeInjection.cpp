@@ -27,7 +27,7 @@ void injectCodeUsingThreadInjection(HANDLE process, LPVOID func, int times, cons
 	memcpy(&codeCave[10], &func, 4);
 
 
-	// allocate memory for the coe cave
+	// allocate memory for the code cave
 	int stringlen = strlen(string) + 1;
 	int fulllen = stringlen + sizeof(codeCave);
 	LPVOID remoteString = VirtualAllocEx(process, NULL, fulllen, MEM_COMMIT, PAGE_EXECUTE);
@@ -49,7 +49,7 @@ void injectCodeUsingThreadInjection(HANDLE process, LPVOID func, int times, cons
 DWORD GetProcessThreadID(HANDLE Process)
 {
 	THREADENTRY32 entry;
-    entry.dwSize = sizeof(THREADENTRY32);
+	entry.dwSize = sizeof(THREADENTRY32);
 	HANDLE snapshot = CreateToolhelp32Snapshot(TH32CS_SNAPTHREAD, 0);
 
 	if (Thread32First(snapshot, &entry) == TRUE)
@@ -137,7 +137,7 @@ void LoadDll(HANDLE process, const wchar_t* dllPath)
 	LPVOID remoteString = VirtualAllocEx(process, NULL, namelen * 2, MEM_COMMIT, PAGE_EXECUTE);
 	WriteProcessMemory(process, remoteString, dllPath, namelen * 2, NULL);
 
-	// get the address of GetModuleHandle()
+	// get the address of LoadLibraryW()
 	HMODULE k32 = GetModuleHandleA("kernel32.dll");
 	LPVOID funcAdr = GetProcAddress(k32, "LoadLibraryW");
 
