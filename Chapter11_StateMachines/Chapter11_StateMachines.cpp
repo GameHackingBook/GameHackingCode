@@ -57,7 +57,7 @@ std::vector<StateDefinition> buildMachine()
 		static bool hasLearned = false;
 		if (!hasLearned && sensors->detectedWeakHeal())
 		{
-			hasLearned = false;
+			hasLearned = true;
 			healAt = 100 - sensors->getWeakHealIncrease();
 		}
 		return sensors->getHealthPercent() > healAt;
