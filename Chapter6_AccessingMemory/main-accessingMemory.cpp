@@ -125,16 +125,14 @@ DWORD getMyBaseAddressFS()
 
 DWORD getRemoteBaseAddress(HANDLE process)
 {
-
 	DWORD newBase;
 	// get the address of kernel32.dll
 	HMODULE k32 = GetModuleHandleA("kernel32.dll");
 
 	// get the address of GetModuleHandle()
 	LPVOID funcAdr = GetProcAddress(k32, "GetModuleHandleA");
+	if (!funcAdr) funcAdr = GetProcAddress(k32, "GetModuleHandleW");
 
-	if (!funcAdr)
-		funcAdr = GetProcAddress(k32, "GetModuleHandleW");
 	// create the thread
 	HANDLE thread = CreateRemoteThread(process, NULL, NULL, (LPTHREAD_START_ROUTINE)funcAdr, NULL, NULL, NULL);
 
