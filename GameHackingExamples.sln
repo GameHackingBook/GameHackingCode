@@ -25,6 +25,25 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter11_StateMachines", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter11_SearchAlgorithms", "Chapter11_SearchAlgorithms\Chapter11_SearchAlgorithms.vcxproj", "{35470A34-CBB0-41D1-A54B-E1CF3DE9A3B7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{454BEDF4-C177-4DB3-85D1-20813E9EBDCC}"
+	ProjectSection(SolutionItems) = preProject
+		LuaScripts\Chapter1_SearchingForAssemblyPatterns.lua = LuaScripts\Chapter1_SearchingForAssemblyPatterns.lua
+		LuaScripts\Chapter1_SearchingForStrings.lua = LuaScripts\Chapter1_SearchingForStrings.lua
+		LuaScripts\Chapter5_CountLinkedListNodes.lua = LuaScripts\Chapter5_CountLinkedListNodes.lua
+		LuaScripts\Chapter5_VerifyLinkedList.lua = LuaScripts\Chapter5_VerifyLinkedList.lua
+		LuaScripts\Chapter5_VerifyMap.lua = LuaScripts\Chapter5_VerifyMap.lua
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter1_BasicMemory", "Chapter1_BasicMemory\Chapter1_BasicMemory.vcxproj", "{AB736FAE-3FEF-40C0-B426-BFC3E3FA569F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter1_MemoryPointers", "Chapter1_MemoryPointers\Chapter1_MemoryPointers.vcxproj", "{3DEAB7C6-98B4-43F0-8F71-001EB28CAE84}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter2_BasicDebugging", "Chapter2_BasicDebugging\Chapter2_BasicDebugging.vcxproj", "{DEDDE9C4-3230-433C-B829-BE8981E645C9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter3_FindingFiles", "Chapter3_FindingFiles\Chapter3_FindingFiles.vcxproj", "{4188B6F0-3948-4CB8-90C6-038CED132E11}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chapter3_CloseMutex", "Chapter3_CloseMutex\Chapter3_CloseMutex.vcxproj", "{B7A15C0B-6532-432F-864B-5381256B4D58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -79,6 +98,26 @@ Global
 		{35470A34-CBB0-41D1-A54B-E1CF3DE9A3B7}.Debug|Win32.Build.0 = Debug|Win32
 		{35470A34-CBB0-41D1-A54B-E1CF3DE9A3B7}.Release|Win32.ActiveCfg = Release|Win32
 		{35470A34-CBB0-41D1-A54B-E1CF3DE9A3B7}.Release|Win32.Build.0 = Release|Win32
+		{AB736FAE-3FEF-40C0-B426-BFC3E3FA569F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AB736FAE-3FEF-40C0-B426-BFC3E3FA569F}.Debug|Win32.Build.0 = Debug|Win32
+		{AB736FAE-3FEF-40C0-B426-BFC3E3FA569F}.Release|Win32.ActiveCfg = Release|Win32
+		{AB736FAE-3FEF-40C0-B426-BFC3E3FA569F}.Release|Win32.Build.0 = Release|Win32
+		{3DEAB7C6-98B4-43F0-8F71-001EB28CAE84}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3DEAB7C6-98B4-43F0-8F71-001EB28CAE84}.Debug|Win32.Build.0 = Debug|Win32
+		{3DEAB7C6-98B4-43F0-8F71-001EB28CAE84}.Release|Win32.ActiveCfg = Release|Win32
+		{3DEAB7C6-98B4-43F0-8F71-001EB28CAE84}.Release|Win32.Build.0 = Release|Win32
+		{DEDDE9C4-3230-433C-B829-BE8981E645C9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DEDDE9C4-3230-433C-B829-BE8981E645C9}.Debug|Win32.Build.0 = Debug|Win32
+		{DEDDE9C4-3230-433C-B829-BE8981E645C9}.Release|Win32.ActiveCfg = Release|Win32
+		{DEDDE9C4-3230-433C-B829-BE8981E645C9}.Release|Win32.Build.0 = Release|Win32
+		{4188B6F0-3948-4CB8-90C6-038CED132E11}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4188B6F0-3948-4CB8-90C6-038CED132E11}.Debug|Win32.Build.0 = Debug|Win32
+		{4188B6F0-3948-4CB8-90C6-038CED132E11}.Release|Win32.ActiveCfg = Release|Win32
+		{4188B6F0-3948-4CB8-90C6-038CED132E11}.Release|Win32.Build.0 = Release|Win32
+		{B7A15C0B-6532-432F-864B-5381256B4D58}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B7A15C0B-6532-432F-864B-5381256B4D58}.Debug|Win32.Build.0 = Debug|Win32
+		{B7A15C0B-6532-432F-864B-5381256B4D58}.Release|Win32.ActiveCfg = Release|Win32
+		{B7A15C0B-6532-432F-864B-5381256B4D58}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
