@@ -16,3 +16,5 @@ If you can't compile yourself, all of the binaries are in the `/bin/` directory.
 
 # Usage
 You may need to grab [this redistributable package from Microsoft](https://www.microsoft.com/en-us/download/details.aspx?id=5555) to run the binaries if you don't have Visual Studio. If you get errors about loading fonts or map, move [arial.ttf](https://github.com/GameHackingBook/GameHackingExamples/blob/master/arial.ttf) and [game.map](https://github.com/GameHackingBook/GameHackingExamples/blob/master/game.map) into the same directory as the binary and try again.
+
+If you for saome reason want to use the debug binaries, you will have to have the debug redistributable installed. This comes with Visual Studio 2010, and you can also find the stand-alone DLLs online. If this give you trouble, I'd recommend either sticking to the release binaries, or compiling on your local version of Visual studio given the compile steps above.
