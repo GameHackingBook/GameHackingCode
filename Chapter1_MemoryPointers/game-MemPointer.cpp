@@ -25,6 +25,7 @@ bool checkWin()
 	Location* blocation = ballLocation->getLocation();
 	return (map[blocation->y][blocation->x] == 4);
 }
+//using a method to make the backgroumd
 void drawBackground()
 {	for (int i = 0; i <= 24; i++)
 	{
@@ -41,7 +42,7 @@ void drawBackground()
 		}
 	}
 }
-
+//method used to draw objects in desired location
 void drawObjects()
 {
 	Location* blocation = ballLocation->getLocation();
@@ -51,7 +52,7 @@ void drawObjects()
 	al_draw_filled_circle(blocation->x * 20 + 10, blocation->y * 20 + 10,
 							10, al_map_rgb(100, 100, 100));
 }
-
+//make th specified HUD 
 void drawHUD(ALLEGRO_FONT *font)
 {
 	if (!testRunning)
@@ -71,7 +72,7 @@ void drawHUD(ALLEGRO_FONT *font)
 		al_draw_text(font, al_map_rgb(50, 50, 50), 10, 40, 0, text);
 	}
 }
-
+//taking inputs from keyboards
 void keyboardEvent()
 {
 	if (testRunning)
@@ -120,7 +121,7 @@ void keyboardEvent()
 	blocation->y = newBall.y;
 	selfLocation = newSelf;
 }
-
+//main method to execute
 int main(void)
 {
 	char* error = "";
